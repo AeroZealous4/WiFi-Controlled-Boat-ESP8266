@@ -1,3 +1,72 @@
+# WiFi controlled RC Boat using ESP8266 NonOS SDK
+
+Native c code for twin motor powered RC boat based on NonOS SDK provided from Espressif.
+Control signals are received from remote control android app "Universal RC transmitter".
+ESP8266 is set in station mode and connects to access point ID "FreePackets" with password "12345678".
+Make changes in a code for changing AP ID and password. 
+ESP8266 hosts a TCP IP server. Send data over TCP IP to ESP8266 IP with port no 1112. Sequence of signal to be sent is mentioned in a code.
+Boat will stop moving if it goes out off range. Set appropriate seq of signal with required default value in app.
+
+#RC Boat Embedded System
+<img src="images/boat2.jpg" width="800">
+#RC Boat
+<img src="images/boat1.jpg" width="800">
+<img src="images/boat3.gif" width="800">
+# Compile
+Use method mentioned in [ESP 8266 Getting Started Guide](https://www.espressif.com/sites/default/files/documentation/2a-esp8266-sdk_getting_started_guide_en.pdf) for compiling the code and flashing.
+
+* For ESP8266 (ESP-01 : 1 MB Flash) follow following procedure in the terminal
+
+Go in the folder of the project (here WIFI_RC2) where "ls" cmd will show 
+gen_misc.bat  gen_misc.sh  include  Makefile  user
+Type command
+`./gen_misc.sh`
+
+* choose an appropriate setting for compiling and creating binary files.
+
+`esp8266@esp8266-VirtualBox:~/Share/ESP8266_NONOS_SDK-3.0/sw_timer_test$ ./gen_misc.sh
+gen_misc.sh version 20150511
+
+Please follow below steps(1-5) to generate specific bin(s):
+STEP 1: choose boot version(0=boot_v1.1, 1=boot_v1.2+, 2=none)
+enter(0/1/2, default 2):
+2   
+boot mode: none
+
+STEP 2: choose bin generate(0=eagle.flash.bin+eagle.irom0text.bin, 1=user1.bin, 2=user2.bin)
+enter (0/1/2, default 0):
+0
+generate bin: eagle.flash.bin+eagle.irom0text.bin
+
+STEP 3: choose spi speed(0=20MHz, 1=26.7MHz, 2=40MHz, 3=80MHz)
+enter (0/1/2/3, default 2):
+2
+spi speed: 40 MHz
+
+STEP 4: choose spi mode(0=QIO, 1=QOUT, 2=DIO, 3=DOUT)
+enter (0/1/2/3, default 0):
+2
+spi mode: DIO
+
+STEP 5: choose spi size and map
+    0= 512KB( 256KB+ 256KB)
+    2=1024KB( 512KB+ 512KB)
+    3=2048KB( 512KB+ 512KB)
+    4=4096KB( 512KB+ 512KB)
+    5=2048KB(1024KB+1024KB)
+    6=4096KB(1024KB+1024KB)
+    7=4096KB(2048KB+2048KB) not support ,just for compatible with nodeMCU board
+    8=8192KB(1024KB+1024KB)
+    9=16384KB(1024KB+1024KB)
+enter (0/2/3/4/5/6/7/8/9, default 0):
+4
+spi size: 4096KB
+spi ota map:  512KB + 512KB
+
+start...`
+# Flash
+Setting for flashing ESP-01 1 MB module
+<img src="images/Flash_Setting.jpg" width="800">
 # Support Policy for ESP8266 NonOS
 
 Starting from December 2019, 
