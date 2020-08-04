@@ -8,10 +8,14 @@ ESP8266 hosts a TCP IP server. Send data over TCP IP to ESP8266 IP with port no 
 Boat will stop moving if it goes out off range. Set appropriate seq of signal with required default value in app.
 
 #RC Boat Embedded System
+
 <img src="images/boat2.jpg" width="800">
+
 #RC Boat
+
 <img src="images/boat1.jpg" width="800">
 <img src="images/boat3.gif" width="800">
+
 # Compile
 Use method mentioned in [ESP 8266 Getting Started Guide](https://www.espressif.com/sites/default/files/documentation/2a-esp8266-sdk_getting_started_guide_en.pdf) for compiling the code and flashing.
 
