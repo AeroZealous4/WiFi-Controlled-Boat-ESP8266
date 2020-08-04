@@ -1,14 +1,3 @@
-// Project Name:Twin Motor Powered RC Boat
-// Software Ver:V0.0
-// Author:      Akshay Pampatwar 
-// Description: ESP8266 is interfaced with driver for controlling speed of two brushed motors.
-//              Differential action of two motors are used for controlling the boat.
-//              TCP Ip packet is received from mobile application (In this project android application Universal RC transmitter is used). 
-//              Corresponding duty cycle for two motors are then calculated. From these calculated duty cycle values 
-//              PWM signal is applied to motors. Following signal is accepted which is converted into PWM.
-//              ch[0]: Fwd Speed (ch[0]=127 : 0 speed)
-//              ch[1]: Direction of rudder (ch[1]=127 : Neutral pos of rudder i.e. boat will go straight)
-
 /*
  * ESPRESSIF MIT License
  *
@@ -32,6 +21,19 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
+// Project Name:Twin Motor Powered RC Boat
+// Software Ver:V0.0
+// Author:      Akshay Pampatwar 
+// Description: ESP8266 is interfaced with driver for controlling speed of two brushed motors.
+//              Differential action of two motors are used for controlling the boat.
+//              TCP Ip packet is received from mobile application (In this project android application Universal RC transmitter is used). 
+//              Corresponding duty cycle for two motors are then calculated. From these calculated duty cycle values 
+//              PWM signal is applied to motors. Following signal is accepted which is converted into PWM.
+//              ch[0]: Fwd Speed (ch[0]=127 : 0 speed)
+//              ch[1]: Direction of rudder (ch[1]=127 : Neutral pos of rudder i.e. boat will go straight)
+
+
 #include "ets_sys.h"
 #include "osapi.h"
 #include "spi_test.h"

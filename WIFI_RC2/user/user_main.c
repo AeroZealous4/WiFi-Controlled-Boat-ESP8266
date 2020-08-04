@@ -1,23 +1,3 @@
-// Project Name:Twin Motor Powered RC Boat
-// Software Ver:V0.0
-// Author:      Akshay Pampatwar 
-// Description: ESP8266 is interfaced with driver for controlling speed of two brushed motors.
-//              Differential action of two motors are used for controlling the boat.
-//              TCP Ip packet is received from mobile application (In this project android application Universal RC transmitter is used). 
-//              Corresponding duty cycle for two motors are then calculated. From these calculated duty cycle values 
-//              PWM signal is applied to motors. ch0 to ch3 is active.(Change code for activating other channels)
-//              Signal be received in a following sequence. 
-//Signals:      ch[0]: LV :  Fwd Speed (ch[0]=127 : 0 speed)
-//              ch[1]: RH :  Direction of rudder (ch[1]=127 : Neutral pos of rudder i.e. boat will go straight)
-//              ch[2]: PWM range:Range(0,87),  Limits maximum thrust. It scales motor PWM signal s.t. it will have upper limit (0 to 100%)
-//              ch[3]: trim :     Range(0,255), Send 150 for 0 trimming. Used for triming turning of boat.
-//              ch[4]: mt trim 0: Range(0,255), Send 150 for 0 trimming. Trim power of motor 0
-//              ch[5]: mt trim 1: Range(0,255), Send 150 for 0 trimming. Trim power of motor 1
-//              ch[6]: Extra channel
-//              ch[7]: Extra channel
-//              ch[9]: Extra channel
-
-
 /*
  * ESPRESSIF MIT License
  *
@@ -41,6 +21,28 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
+// Project Name:Twin Motor Powered RC Boat
+// Software Ver:V0.1
+// Author:      Akshay Pampatwar 
+// Description: ESP8266 is interfaced with driver for controlling speed of two brushed motors.
+//              Differential action of two motors are used for controlling the boat.
+//              TCP Ip packet is received from mobile application (In this project android application Universal RC transmitter is used). 
+//              Corresponding duty cycle for two motors are then calculated. From these calculated duty cycle values 
+//              PWM signal is applied to motors. ch0 to ch3 is active.(Change code for activating other channels)
+//              Signal be received in a following sequence. 
+//Signals:      ch[0]: LV :  Fwd Speed (ch[0]=127 : 0 speed)
+//              ch[1]: RH :  Direction of rudder (ch[1]=127 : Neutral pos of rudder i.e. boat will go straight)
+//              ch[2]: PWM range:Range(0,87),  Limits maximum thrust. It scales motor PWM signal s.t. it will have upper limit (0 to 100%)
+//              ch[3]: trim :     Range(0,255), Send 150 for 0 trimming. Used for triming turning of boat.
+//              ch[4]: mt trim 0: Range(0,255), Send 150 for 0 trimming. Trim power of motor 0
+//              ch[5]: mt trim 1: Range(0,255), Send 150 for 0 trimming. Trim power of motor 1
+//              ch[6]: Extra channel
+//              ch[7]: Extra channel
+//              ch[9]: Extra channel
+
+
+
 #include "ets_sys.h"
 #include "osapi.h"
 #include "spi_test.h"
